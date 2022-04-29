@@ -1,0 +1,21 @@
+
+.logo{
+    padding-left: 25px;
+    font-size:x-large;
+    font-weight: 600;
+}
+
+.navbar-center{
+    flex-grow: 1;
+    justify-content: center;
+}
+a.navbar-item > .logo:hover {
+    font-weight: 700;
+}
+
+a.navbar-item:hover{
+    color:darkorange;
+    font-weight: 500;
+}
+
+

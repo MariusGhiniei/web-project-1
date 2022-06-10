@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-</div>
+        </div>
     </nav>  
 
     <script src="../js/header.js"></script>

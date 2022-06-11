@@ -115,12 +115,15 @@
             </div>
                 <br> 
             <button class="button is-warning is-rounded has-text-weight-semibold"type="submit" name="submit"> Sign Up</button>
-            <button class="align-right button is-success is-rounded has-text-weight-semibold " name = "login">Log In</button>
+            <button class="align-right button is-success is-rounded has-text-weight-semibold " name = "login">
+                <a href="../login-page/index-login.php"> Log In</button> </a>
             <?php require_once 'php/validation.php'; ?>
        
         </form>
     </section>
 
+    <br> <br>
+    <?php require_once '../../footer/footer.php';?>
     <!-- js import -->
     <script src="../../header/js/header.js"></script>
 </body>

@@ -77,9 +77,10 @@
                 </p>
             </div>
             <br>
-            <button class=" button is-success is-rounded has-text-weight-semibold " name = "login">Log In</button>
+            <button class=" button is-success is-rounded has-text-weight-semibold " name = "login" type="submit"> Log In</button>
             
-            <button class="align-left button is-warning is-rounded has-text-weight-semibold"type="submit" name="submit"> Sign Up</button>
+            <button class="align-left button is-warning is-rounded has-text-weight-semibold" >
+                <a href="../signup-page/index-signup.php"> Sign Up</button> </a>
             
 
         <?php 
@@ -88,6 +89,9 @@
         </form>
     </section>
     
+
+    <br> <br>
+    <?php require_once '../../footer/footer.php';?>
     <!-- js import -->
     <script src="../../header/js/header.js"></script>
 </body>

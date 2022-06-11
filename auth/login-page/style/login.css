@@ -8,3 +8,17 @@
 .align-left{
     margin-left:80px;
 }
+
+.footer-mine{
+    background-color: #fafafa;
+    padding: 2.5rem 3rem;
+
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}

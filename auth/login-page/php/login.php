@@ -1,5 +1,5 @@
 <?php
-
+session_start(); //check it later
 if(isset($_POST["submit"])) {
 
     $username = $_POST["username"];
@@ -16,7 +16,8 @@ if(isset($_POST["submit"])) {
     loginUser($conn, $username, $pass);
 
 } else {
-    header("location: ../index-home-page.html");
+    header("location: ../../../index-home-page.html");
+   
     exit();
 }
 

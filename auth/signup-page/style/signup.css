@@ -16,3 +16,12 @@
     margin-left:100px;
 }
 
+.footer-mine{
+    background-color: #fafafa;
+    padding: 2.5rem 3rem;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}

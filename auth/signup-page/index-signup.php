@@ -39,6 +39,9 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
+                        <a class="button is-warning">
+                            <strong>Sign up</strong>
+                        </a>
                         <a class="button is-light">
                             <strong>Log in</strong>
                         </a>
@@ -52,7 +55,7 @@
     <section class="section form-border"> 
         <form action="php/signup.php" method="post" class="is-rounded">
             
-        <h1 class="title is-3 has-text-centered has-text-weight-semibold has-text-danger-dark">SIGN UP!</h1>
+        <h1 class="title is-3 has-text-centered has-text-weight-semibold has-text-danger-dark">SIGN UP</h1>
         
             <div class="field">
                 <label class="label"> Username: </label>
@@ -117,5 +120,8 @@
        
         </form>
     </section>
+
+    <!-- js import -->
+    <script src="../../header/js/header.js"></script>
 </body>
 </html>

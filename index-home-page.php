@@ -153,6 +153,10 @@
             <button class="align-right button is-success is-rounded has-text-weight-semibold " name = "login">
                 <a class="has-text-white" href="auth/login.php"> Log In  </a>
             </button> 
+            
+            <?php
+                include 'auth/includes/signup-validations.inc.php';
+            ?>
         </form>
     </section> 
 

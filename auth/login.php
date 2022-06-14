@@ -46,18 +46,41 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-warning" href="../index-home-page.php">
+
+                        <?php
+                            if(isset($_SESSION["users_id"])) {
+                        ?>
+
+                        <a class="button is-warning" href="includes/profile.php">
+                            <strong>
+                                <?php
+                                    echo $_SESSION["users_username"];
+                                ?>
+                            </strong>
+                        </a>
+                        <a class="button is-light" href="includes/logout.inc.php">
+                            <strong>Log out</strong>
+                        </a>
+
+                        <?php
+                            } else {
+                        ?>
+                        <a class="button is-warning" href="index-home-page.php">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-light" href="login.php">
+                        <a class="button is-light" href="auth/login.php">
                             <strong>Log in</strong>
                         </a>
+                        <?php 
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
     </nav>  
-    <br> <br> <br> <br>
+    
+    <br>
 
     <section class="section form-border "> 
         <form action="includes/login.inc.php" method="post">
@@ -86,7 +109,9 @@
 
             <button class=" button is-success is-rounded has-text-weight-semibold " value = "login"
             name = "login-submit" type="submit"> Log In</button>
-        
+            <?php
+            include 'includes/login-validations.inc.php';
+            ?>
         </form>
     </section>
     

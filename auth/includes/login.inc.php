@@ -14,7 +14,8 @@
 
         $login->loginUser();
 
+
         //front page
-        header("location: ../../index-home-page.php?error=none");
+        header("location: ../login.php?error=none");
     }
 ?>

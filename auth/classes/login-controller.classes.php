@@ -15,7 +15,7 @@
         {
             if($this->emptyInput() === false)
             {
-                header("location: ../../index-home-page.php?error=emptyinput");
+                header("location: ../login.php?error=emptyinput");
                 exit();
             }
 

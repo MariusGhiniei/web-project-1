@@ -1,0 +1,14 @@
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body > footer {
+    margin-top: auto;
+}
+
+.footer-mine{
+    background-color: #fafafa;
+    padding: 2.5rem 3rem;
+}

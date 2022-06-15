@@ -13,7 +13,7 @@
 
                 $stmt = null;
 
-                header("location: ../../index-home-page.php?error=stmtfailed");
+                header("location: ../login.php?error=stmtfailed");
                 exit();
             }
 
@@ -21,7 +21,7 @@
             {
                 $stmt = null;
 
-                header("location: ../../index-home-page.php?error=usernotfound");
+                header("location: ../login.php?error=usernotfound");
                 exit();
             }
 
@@ -32,7 +32,7 @@
             {
                 $stmt = null;
 
-                header("location: ../../index-home-page.php?error=wrongpassword");
+                header("location: ../login.php?error=wrongpassword");
                 exit();
             }
 
@@ -46,7 +46,7 @@
                 {
                     $stmt = null;
                    
-                    header("location: ../../index-home-page.php?error=stmtfailed");
+                    header("location: ../login.php?error=stmtfailed");
                     exit();
                 }
 
@@ -54,7 +54,7 @@
                 {
                     $stmt = null;
 
-                    header("location: ../../index-home-page.php?error=usesnotfound");
+                    header("location: ../login.php?error=usernotfound");
                     exit();
                 }
 

@@ -1,0 +1,82 @@
+<!-- Create a Post -->
+    <br> <br> <br>
+    <section class="hero is-warning">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title has-text-white-bis">
+                    Create a Post on Zuzugram
+                </h1>
+            </div>
+        </div> 
+  
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth is-large">
+                <div class="container">
+                    <ul>
+                        <li class="tab is-active" onclick="openTab(event,'Text')"><a >Text Post</a></li>
+                        <li class="tab" onclick="openTab(event,'Image')"><a >Image Post</a></li>
+                        <li class="tab" onclick="openTab(event,'Video')"><a >Video Post</a></li>
+                        <li class="tab" onclick="openTab(event,'Check-in')"><a >Check-in Post</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <div class="container section">
+        <div id="Text" class="content-tab" >
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+                </div>
+            </div>
+            <br>
+            <button class="is-centered button is-danger is-outlined has-text-centered">Post</button>
+        </div>
+        <div id="Image" class="content-tab" style="display:none">
+
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+                </div>
+            </div>
+
+            <!-- <div id="file-js" class="file is-warning has-name">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="resume">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fa fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            Upload an image 
+                        </span>
+                    </span>
+                    <span class="file-name">
+                    No image uploaded
+                    </span>
+                </label>
+            </div>
+            <br>
+            <button class="is-centered button is-danger is-outlined has-text-centered">Post</button>
+        -->
+        </div>
+        <div id="Video" class="content-tab" style="display:none">
+            <div id="Text" class="content-tab" >
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+                    </div>
+                </div>
+
+                <input class="input is-warning" type="text" placeholder="Warning input">
+                <br>
+                <button class="is-centered button is-danger is-outlined has-text-centered">Post</button>
+        </div>
+        </div>
+        <div id="Check-in" class="content-tab" style="display:none">
+        <p>
+            test3 <br>  
+        Specification Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>

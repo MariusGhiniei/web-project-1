@@ -51,7 +51,7 @@
                             if(isset($_SESSION["users_id"])) {
                         ?>
 
-                        <a class="button is-warning" href="includes/profile.php">
+                        <a class="button is-warning" href="profile.php">
                             <strong>
                                 <?php
                                     echo $_SESSION["users_username"];

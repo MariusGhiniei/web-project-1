@@ -2,6 +2,7 @@
     session_start();
     session_unset();
     session_destroy();
+    $_SESSION["loggedin"] = false;
     
 
     header("location: ../../index-home-page.php?error=none");

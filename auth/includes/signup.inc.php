@@ -16,7 +16,7 @@
 
         $signup->singupUser();
 
-        //front page
-        header("location: ../../index-home-page.php?error=none");
+        //feed page
+        header("location: ../../feed/feed.php?error=none");
     }
 ?>

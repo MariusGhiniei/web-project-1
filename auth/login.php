@@ -65,10 +65,10 @@
                         <?php
                             } else {
                         ?>
-                        <a class="button is-warning" href="index-home-page.php">
+                        <a class="button is-warning" href="signup.php">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-light" href="auth/login.php">
+                        <a class="button is-light" href="login.php">
                             <strong>Log in</strong>
                         </a>
                         <?php 

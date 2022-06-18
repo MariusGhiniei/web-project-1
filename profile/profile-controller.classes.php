@@ -1,49 +1,40 @@
 <?php
 
-    class SignupController extends Signup{
-        
-        private $username;
-        private $pass;
-        private $passRepeat;
-        private $email;
+    class ProfileController extends Profile {
+    
+       private $username;
+       private $pass;
+       private $email;
+       private $id;
 
-        public function __construct($username,$pass,$passRepeat,$email)
-        {
-            $this->username = $username;
-            $this->pass = $pass;
-            $this->passRepeat = $passRepeat;
-            $this->email = $email;
-        }
+         public function __construct($username,$pass,$email,$id)
+         {
+              $this->username = $username;
+              $this->pass = $pass;
+              $this->email = $email;
+              $this->id = $id;
+         }
 
-        public function singupUser(){
-
-            if($this->emptyInput() == false){
-                
-                header("location: ../signup.php?error=emptyinput");
+        public function updateUserInformation(){
+            
+            if($this->invalidUsername() == false)
+            {
+                header("location: profile.php?error=username");
                 exit();
             }
-            if($this->invalidUsername() == false){
-
-                header("location: ../signup.php?error=username");
+            if($this->invalidEmail() == false)
+            {
+                header("location: profile.php?error=email");
                 exit();
             }
-            if($this->invalidEmail() == false){
-
-                header("location: ../signup.php?error=email");
-                exit();
-            }
-            if($this->validatePass() == false){
-
-                header("location: ../signup.php?error=passwordmatch");
-                exit();
-            }
-            if($this->usernameTaken() == false){
-
-                header("location: ../signup.php?error=usernameoremailtaken");
+            if($this->usernameTaken() == false)
+            {
+                header("location: profile.php?error=usernameoremailtaken");
                 exit();
             }
 
-            $this->setUser($this->username,$this->pass,$this->email);
+
+            $this->updateUser($this->username,$this->pass,$this->email,$this->id);
         }
 
         private function emptyInput(){
@@ -114,5 +105,29 @@
 
             return $result;
         }
+
+        protected function checkUser($username,$email){
+            $stmt = $this->connect()->prepare('SELECT users_username FROM users WHERE users_username = ? OR
+            users_email =?;');
+
+            if(!$stmt->execute(array($username,$email))) {
+
+                $stmt = null;
+
+                header("location: profile.php?error=stmtfailed");
+                exit();
+            }
+
+            $resultCheck = null;
+
+            if($stmt->rowCount() > 0){  //atleast 1 row of info from db 
+                
+                $resultCheck = false;
+            } else {
+                $resultCheck = true;
+            }
+
+            return $resultCheck;
+                    }
     }
 ?>

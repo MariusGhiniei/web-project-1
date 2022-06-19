@@ -1,24 +1,25 @@
 <?php
 
-    if(isset($_POST["update"]))
+    $serverName = "localhost";
+    $userName = "root";
+    $password = "";
+    $dbName = "zuzugramDb";
+
+    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
+
+    if(!$conn)
     {
-        //data from form
-        $username = $_POST["username"];
-        $email = $_POST["email"];
-        $pass = $_POST["password"];
-        $id = $_SESSION["users_id"];
-       
-
-        include "../auth/classes/db.classes.php";
-        include "profile.classes.php";
-        include "profile-controller.classes.php";
-
-        //profile object
-        $profile = new ProfileController($username,$pass,$email,$id);
-
-        $profile->updateUserInformation(); 
-
-        //front page
-        header("location: profile.php?error=none");
+        die("Connection failed: " . mysqli_connect_error());
     }
+
+    $stmt = $conn->prepare("SELECT users_username,users_email FROM users WHERE users_id = ?;");
+
+    $stmt->bind_param("i", $_SESSION["users_id"]);
+    $stmt->execute();
+    $stmt->bind_result($username,$email);
+    $stmt->fetch();
+    $stmt->close();
+
+
+
 ?>

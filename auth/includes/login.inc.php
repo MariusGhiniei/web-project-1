@@ -15,7 +15,7 @@
         $login->loginUser();
 
 
-        //front page
-        header("location: ../login.php?error=none");
+        //profile page -test
+        header("location: ../../profile/profile.php?error=none");
     }
 ?>

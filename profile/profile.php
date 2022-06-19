@@ -18,6 +18,7 @@
     <link rel= "stylesheet" href= "../style/header.css">
     <link rel ="stylesheet" href ="../style/footer.css">
     <link rel ="stylesheet" href ="../style/signup.css">
+    <link rel ="stylesheet" href ="../style/profile.css">
 
     <!-- Font Awesome Icons Import -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -100,31 +101,61 @@
         </div>
     </nav>  
    
-    <form action="profile.inc.php" method = "get" class="has-text-centered mt-5 pt-6">
-        username: <input type="text" name="username" ><br>
-        
-        email: <input type="email" name="email"><br>
+   
+                            
+   
+    <?php include "profile.inc.php"; ?>
+    
+    <br> <br> <br> <br> <br> 
+    <form action="update.php" method="post">
+        <h1 class="title is-size-4-touch has-text-centered has-text-info"><? echo $_SESSION["users_username"]?>'s profile Settings</h1>
 
-        password: <input type="password" name="password"><br>
-      
-        <input type="submit" name="update" value="update">
-       
-        <?php 
-        if(isset($_GET["update"]))
-        {
-            //data from form
-            $username = $_POST["username"];
-            $email = $_POST["email"];
-            $pass = $_POST["password"];
-            $id = $_SESSION["users_id"];
+        <div class="container has-text-centered">
+            <div class="field">
+                <label class="label">Username: </label> 
+                <div class="control">
+                    <input class="input" type="text" size="10" style="width:275px;" id="profile-username"
+                    name="username" value="<?php echo $username; ?>" disabled>
+                    <a id="edit-username" class="ml-4 mb-1"> 
+                        <span class="icon is-large is-right">
+                            <i class="fa fa-2x fa-edit"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
 
-            echo $username;
-        }
-        ?>
+            <br> 
+
+            <div class="field">
+                <label class="label">Email: </label> 
+                <div class="control">
+                    <input class="input" type="email" name="email" style="width:275px;" id="profile-email" 
+                    value="<?php echo $email; ?>" disabled>
+                    <a id="edit-email" class="ml-4 mb-1"> 
+                        <span class="icon is-large is-right">
+                            <i class="fa fa-2x fa-edit"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="buttons is-centered mt-4 pt-4">
+            <button class="button is-info" name="update-profile-submit">Save Changes</button>
     </form>
+        <form action="delete.php" method="post" >
+            <button class="button is-danger" name="delete-submit">Delete Account</button>
+        </form>
+    </div>
+    <?php include "notifications.php"; ?>
+        
+        
     
     
-
+       
+       
+       
     
     
 
@@ -151,5 +182,6 @@
     
     </footer>
     <script src="../js/index.js"></script>
+    <script src="../js/profile.js"></script>
   </body>
   </html>

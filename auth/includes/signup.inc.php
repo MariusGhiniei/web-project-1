@@ -16,7 +16,7 @@
 
         $signup->singupUser();
 
-        //feed page
-        header("location: ../../feed/feed.php?error=none");
+        //login page
+        header("location: ../login.php?error=signup");
     }
 ?>

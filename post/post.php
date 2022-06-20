@@ -128,6 +128,7 @@
     </section>
 
     <div class="container section">
+        <form action=""></form>
         <div id="Text" class="content-tab" >
             <div class="field">
                 <div class="control">

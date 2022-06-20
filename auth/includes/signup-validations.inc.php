@@ -66,7 +66,7 @@
                         <p class='has-text-weight-semibold'>You can now log in !</p>
                         <br>
                         <button class='button is-responsive is-success is-rounded has-text-weight-semibold'>
-                        <a class='has-text-white' href='../login.php'> Log In  </a>
+                        <a class='has-text-white' href='login.php'> Log In  </a>
                         </button> 
                         <button class='delete'></button>
                     </div>

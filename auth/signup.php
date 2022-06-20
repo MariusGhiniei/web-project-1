@@ -101,10 +101,10 @@
     </nav>  
     <!-- signup form -->
    
-    <section class="section form-border"> 
+    <section class="section form-border" id="signup-form"> 
         <form action="includes/signup.inc.php" method="POST" class="is-rounded">
             
-        <h1 class="title is-3 has-text-centered has-text-weight-semibold has-text-danger-dark">SIGN UP</h1>
+        <h1 class="title is-4 has-text-centered has-text-weight-semibold has-text-danger-dark">SIGN UP</h1>
         
             <div class="field">
                 <label class="label"> Username: </label>
@@ -147,9 +147,13 @@
                 </p>
             </div>
                 <br> 
-                
-            <button class="button is-warning is-rounded has-text-weight-semibold" type="submit" name="signup-submit"> 
-                 Sign Up </a> </button>
+            
+
+            <div class="g-recaptcha" data-sitekey="6Leqq4MgAAAAAJCHVX5ghBHEK1oqmHpzsV29oUzK"></div> <br>
+            <button class="button is-warning is-rounded has-text-weight-semibold" 
+                    type="submit" name="signup-submit"
+                    > Sign Up </a> </button>
+   
             <button class="align-right button is-success is-rounded has-text-weight-semibold " name = "login">
                 <a class="has-text-white" href="login.php"> Log In  </a>
             </button> 
@@ -158,6 +162,8 @@
                 include 'includes/signup-validations.inc.php';
             ?>
         </form>
+
+
     </section> 
 
     <footer class="footer-mine">
@@ -182,5 +188,8 @@
     
     </footer>
     <script src="../js/index.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+
   </body>
   </html>

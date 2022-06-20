@@ -17,10 +17,16 @@
         $id = $_SESSION["users_id"];
 
         $sql = "DELETE FROM users WHERE users_id = $id;";
+        
+        
+       
 
         if(mysqli_query($conn, $sql))
         {
-            header("location: profile.php?error=deleted");
+            session_unset();
+            session_destroy();
+    
+            header("location: ../index-home-page");
             exit();
         }
         else

@@ -140,7 +140,7 @@
             </div>
         </form>
         
-        <form action="post-image/image.inc.php" method="post">
+        <form action="post-image/image.inc.php" method="post" enctype="multipart/form-data">
             <div id="Image" class="content-tab" style="display:none">
                 <div class="field">
                     <div class="control">
@@ -148,9 +148,9 @@
                     </div>
                 </div>
                 
-                <div id="file-js" class="file is-warning has-name">
+                <div id="file-js" class="file is-warning has-name" >
                     <label class="file-label">
-                        <input class="file-input" type="file" name="resume" name="post-image">
+                        <input class="file-input" type="file" name="post-image" value="">
                         <span class="file-cta">
                             <span class="file-icon">
                                 <i class="fa fa-upload"></i>
@@ -165,7 +165,7 @@
                     </label>
                 </div>
                 <br>
-                <button class="is-centered button is-danger is-outlined has-text-centered" name="post-image-submit">Post</button>
+                <button class="is-centered button is-danger is-outlined has-text-centered" name="post-image-submit" type="submit">Post</button>
             
             </div> 
         </form>

@@ -1,7 +1,9 @@
 <?php
+
     session_start();
+    error_reporting(0);
+
     if(isset($_POST["post-image-submit"])) { 
-        
         
         $serverName = "localhost";
         $userName = "root";
@@ -17,7 +19,13 @@
 
         $id = $_SESSION["users_id"];
 
-        $sql = "INSERT INTO post_image (id, post_text, post_image) VALUES ($id,'".$_POST["post-text"]."', '" . $_POST["post-image"] . "');";
+        $fileName = $_FILES["post-image"]["name"];
+        $tempName = $_FILES["post-image"]["tmp_name"];
+        $folder = "./image/".$fileName;
+
+        move_uploaded_file($tempName, $folder);
+
+        $sql = "INSERT INTO post_image (id, post_text, post_image) VALUES ($id, '" . $_POST["post-text"] . "', '" . $fileName . "');";
 
         if(mysqli_query($conn, $sql))
         {
@@ -30,8 +38,7 @@
             echo "Error deleting record: " . mysqli_error($conn);
         }
 
-        $conn->close();
-
+        
     }
 
 ?>

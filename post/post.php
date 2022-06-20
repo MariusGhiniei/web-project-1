@@ -49,13 +49,13 @@
                 {
             ?>
             <div class="navbar-start navbar-center">
-                <a class="navbar-item">
+                <a class="navbar-item" href="../feed/feed.php">
                     Feed
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="post.php">
                     Create a post
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="../profile/profile.php">
                     Profile
                 </a>
             </div>
@@ -70,14 +70,14 @@
                             {
 
                         ?>
-                        <a class="button is-warning" href="auth/includes/profile.php">
+                        <a class="button is-warning" href="../profile/profile.php">
                             <strong>
                                 <?php
                                 echo $_SESSION["users_username"];
                                 ?>
                             </strong>
                         </a>
-                        <a class="button is-light" href="auth/includes/logout.inc.php">
+                        <a class="button is-light" href="../auth/includes/logout.inc.php">
                             <strong>Log out</strong>
                         </a>
 
@@ -86,10 +86,10 @@
                             else
                             {
                         ?>
-                        <a class="button is-warning" href="index-home-page.php">
+                        <a class="button is-warning" href="../auth/signup.php">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-light" href="auth/login.php">
+                        <a class="button is-light" href="../auth/login.php">
                             <strong>Log in</strong>
                         </a>
                         <?php 

@@ -30,7 +30,7 @@
     <!-- header -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="index-home-page.php">
+            <a class="navbar-item" href="../index-home-page.php">
                 <img src="../assets/cat.png">
                 <span class ="logo" > Zuzugram </span> 
             </a>
@@ -48,13 +48,13 @@
                 {
             ?>
             <div class="navbar-start navbar-center">
-                <a class="navbar-item">
+                <a class="navbar-item" href="feed.php">
                     Feed
                 </a>
                 <a class="navbar-item" href="../post/post.php">
                     Create a post
                 </a>
-                <a class="navbar-item" >
+                <a class="navbar-item" href="../profile/profile.php" >
                     Profile
                 </a>
             </div>
@@ -69,7 +69,7 @@
                             {
 
                         ?>
-                        <a class="button is-warning" href="../auth/includes/profile.php">
+                        <a class="button is-warning" href="../profile/profile.php">
                             <strong>
                                 <?php
                                 echo $_SESSION["users_username"];

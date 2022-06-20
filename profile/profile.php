@@ -149,16 +149,6 @@
         </form>
     </div>
     <?php include "notifications.php"; ?>
-        
-        
-    
-    
-       
-       
-       
-    
-    
-
 
     <footer class="footer-mine">
         <div class="content has-text-centered">

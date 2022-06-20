@@ -17,6 +17,6 @@
         $signup->singupUser();
 
         //login page
-        header("location: ../login.php?error=signup");
+        header("location: ../signup.php?error=none");
     }
 ?>

@@ -18,7 +18,6 @@
     <link rel= "stylesheet" href= "../style/header.css">
     <link rel ="stylesheet" href ="../style/footer.css">
     <link rel ="stylesheet" href ="../style/signup.css">
-    <link rel = "stylesheet" href = "../style/post.css">
 
     <!-- Font Awesome Icons Import -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,13 +48,13 @@
                 {
             ?>
             <div class="navbar-start navbar-center">
-                <a class="navbar-item" href="../feed/feed.php">
+                <a class="navbar-item" href="feed.php">
                     Feed
                 </a>
-                <a class="navbar-item" href="post.php">
+                <a class="navbar-item" href="../post/post.php">
                     Create a post
                 </a>
-                <a class="navbar-item" href="../profile/profile.php">
+                <a class="navbar-item" href="../profile/profile.php" >
                     Profile
                 </a>
             </div>
@@ -100,101 +99,6 @@
             </div>
         </div>
     </nav>  
-    
-    <br> <br> <br>
-    <!-- Create a Post -->
-    <section class="hero is-warning">
-
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title has-text-white-bis">
-                    Create a Post on Zuzugram
-                </h1>
-            </div>
-        </div> 
-  
-        <div class="hero-foot">
-            <nav class="tabs is-boxed is-fullwidth is-large">
-                <div class="container">
-                    <ul>
-                        <li class="tab is-active" onclick="openTab(event,'Text')"><a >Text Post</a></li>
-                        <li class="tab" onclick="openTab(event,'Image')"><a >Image Post</a></li>
-                        <li class="tab" onclick="openTab(event,'Video')"><a >Video Post</a></li>
-                        <li class="tab" onclick="openTab(event,'Check-in')"><a >Check-in Post</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </section>
-
-    <div class="container section">
-        <form action=""></form>
-        <div id="Text" class="content-tab" >
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
-                </div>
-            </div>
-            <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        </div>
-        
-        <div id="Image" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
-                </div>
-            </div>
-            
-            <div id="file-js" class="file is-warning has-name">
-                <label class="file-label">
-                    <input class="file-input" type="file" name="resume">
-                    <span class="file-cta">
-                        <span class="file-icon">
-                            <i class="fa fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                            Upload an image 
-                        </span>
-                    </span>
-                    <span class="file-name">
-                    No image uploaded
-                    </span>
-                </label>
-            </div>
-            <br>
-            <button class="is-centered button is-danger is-outlined has-text-centered">Post</button>
-        
-        </div>
-        <div id="Video" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
-                </div>
-            </div>
-
-            <input class="input is-warning" type="text" placeholder="Insert video link">
-            <br> <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        </div>
-        <div id="Check-in" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
-                </div>
-            </div>
-
-            <input class="input is-warning" type="text" placeholder="Insert google maps location">
-            <br> <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        
-        </div>
-    </div>
-
-    
-
-    
-    
 
     <footer class="footer-mine">
         <div class="content has-text-centered">
@@ -218,6 +122,5 @@
     
     </footer>
     <script src="../js/index.js"></script>
-    <script src="../js/post.js"></script>
   </body>
   </html>

@@ -18,7 +18,7 @@
     <link rel= "stylesheet" href= "../style/header.css">
     <link rel ="stylesheet" href ="../style/footer.css">
     <link rel ="stylesheet" href ="../style/signup.css">
-    <link rel = "stylesheet" href = "../style/post.css">
+    <link rel ="stylesheet" href ="../style/profile.css">
 
     <!-- Font Awesome Icons Import -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@
     <!-- header -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="../index-home-page.php">
+            <a class="navbar-item" href="index-home-page.php">
                 <img src="../assets/cat.png">
                 <span class ="logo" > Zuzugram </span> 
             </a>
@@ -49,13 +49,13 @@
                 {
             ?>
             <div class="navbar-start navbar-center">
-                <a class="navbar-item" href="../feed/feed.php">
+                <a class="navbar-item">
                     Feed
                 </a>
-                <a class="navbar-item" href="post.php">
+                <a class="navbar-item" href="../post/post.php">
                     Create a post
                 </a>
-                <a class="navbar-item" href="../profile/profile.php">
+                <a class="navbar-item" >
                     Profile
                 </a>
             </div>
@@ -70,7 +70,7 @@
                             {
 
                         ?>
-                        <a class="button is-warning" href="../profile/profile.php">
+                        <a class="button is-warning" href="../auth/includes/profile.php">
                             <strong>
                                 <?php
                                 echo $_SESSION["users_username"];
@@ -100,101 +100,55 @@
             </div>
         </div>
     </nav>  
+   
+   
+                            
+   
+    <?php include "profile.inc.php"; ?>
     
-    <br> <br> <br>
-    <!-- Create a Post -->
-    <section class="hero is-warning">
+    <br> <br> <br> <br> <br> 
+    <form action="update.php" method="post">
+        <h1 class="title is-size-4-touch has-text-centered has-text-info"><? echo $_SESSION["users_username"]?>'s profile Settings</h1>
 
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title has-text-white-bis">
-                    Create a Post on Zuzugram
-                </h1>
-            </div>
-        </div> 
-  
-        <div class="hero-foot">
-            <nav class="tabs is-boxed is-fullwidth is-large">
-                <div class="container">
-                    <ul>
-                        <li class="tab is-active" onclick="openTab(event,'Text')"><a >Text Post</a></li>
-                        <li class="tab" onclick="openTab(event,'Image')"><a >Image Post</a></li>
-                        <li class="tab" onclick="openTab(event,'Video')"><a >Video Post</a></li>
-                        <li class="tab" onclick="openTab(event,'Check-in')"><a >Check-in Post</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </section>
-
-    <div class="container section">
-        <form action=""></form>
-        <div id="Text" class="content-tab" >
+        <div class="container has-text-centered">
             <div class="field">
+                <label class="label">Username: </label> 
                 <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
-                </div>
-            </div>
-            <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        </div>
-        
-        <div id="Image" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
-                </div>
-            </div>
-            
-            <div id="file-js" class="file is-warning has-name">
-                <label class="file-label">
-                    <input class="file-input" type="file" name="resume">
-                    <span class="file-cta">
-                        <span class="file-icon">
-                            <i class="fa fa-upload"></i>
+                    <input class="input" type="text" size="10" style="width:275px;" id="profile-username"
+                    name="username" value="<?php echo $username; ?>" disabled>
+                    <a id="edit-username" class="ml-4 mb-1"> 
+                        <span class="icon is-large is-right">
+                            <i class="fa fa-2x fa-edit"></i>
                         </span>
-                        <span class="file-label">
-                            Upload an image 
+                    </a>
+                </div>
+            </div>
+
+            <br> 
+
+            <div class="field">
+                <label class="label">Email: </label> 
+                <div class="control">
+                    <input class="input" type="email" name="email" style="width:275px;" id="profile-email" 
+                    value="<?php echo $email; ?>" disabled>
+                    <a id="edit-email" class="ml-4 mb-1"> 
+                        <span class="icon is-large is-right">
+                            <i class="fa fa-2x fa-edit"></i>
                         </span>
-                    </span>
-                    <span class="file-name">
-                    No image uploaded
-                    </span>
-                </label>
-            </div>
-            <br>
-            <button class="is-centered button is-danger is-outlined has-text-centered">Post</button>
-        
-        </div>
-        <div id="Video" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+                    </a>
                 </div>
             </div>
-
-            <input class="input is-warning" type="text" placeholder="Insert video link">
-            <br> <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
         </div>
-        <div id="Check-in" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
-                </div>
-            </div>
+    
 
-            <input class="input is-warning" type="text" placeholder="Insert google maps location">
-            <br> <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        
-        </div>
+        <div class="buttons is-centered mt-4 pt-4">
+            <button class="button is-info" name="update-profile-submit">Save Changes</button>
+    </form>
+        <form action="delete.php" method="post" >
+            <button class="button is-danger" name="delete-submit">Delete Account</button>
+        </form>
     </div>
-
-    
-
-    
-    
+    <?php include "notifications.php"; ?>
 
     <footer class="footer-mine">
         <div class="content has-text-centered">
@@ -218,6 +172,6 @@
     
     </footer>
     <script src="../js/index.js"></script>
-    <script src="../js/post.js"></script>
+    <script src="../js/profile.js"></script>
   </body>
   </html>

@@ -19,27 +19,27 @@
 
             if($this->emptyInput() == false){
                 
-                header("location: ../../index-home-page.php?error=emptyinput");
+                header("location: ../signup.php?error=emptyinput");
                 exit();
             }
             if($this->invalidUsername() == false){
 
-                header("location: ../../index-home-page.php?error=username");
+                header("location: ../signup.php?error=username");
                 exit();
             }
             if($this->invalidEmail() == false){
 
-                header("location: ../../index-home-page.php?error=email");
+                header("location: ../signup.php?error=email");
                 exit();
             }
             if($this->validatePass() == false){
 
-                header("location: ../../index-home-page.php?error=passwordmatch");
+                header("location: ../signup.php?error=passwordmatch");
                 exit();
             }
             if($this->usernameTaken() == false){
 
-                header("location: ../../index-home-page.php?error=usernameoremailtaken");
+                header("location: ../signup.php?error=usernameoremailtaken");
                 exit();
             }
 

@@ -15,7 +15,7 @@
         $login->loginUser();
 
 
-        //front page
+        //login page
         header("location: ../login.php?error=none");
     }
 ?>

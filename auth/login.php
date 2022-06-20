@@ -41,8 +41,26 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
         <div id="navbar-menu" class="navbar-menu">
+            <?php 
+                if(isset($_SESSION["users_id"]))
+                {
+            ?>
+            <div class="navbar-start navbar-center">
+                <a class="navbar-item" href="../feed/feed.php">
+                    Feed
+                </a>
+                <a class="navbar-item" href="../post/post.php">
+                    Create a post
+                </a>
+                <a class="navbar-item" href="../profile/profile.php">
+                    Profile
+                </a>
+            </div>
+            <?php 
+                }
+                ?>
+    
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
@@ -65,10 +83,10 @@
                         <?php
                             } else {
                         ?>
-                        <a class="button is-warning" href="index-home-page.php">
+                        <a class="button is-warning" href="signup.php">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-light" href="auth/login.php">
+                        <a class="button is-light" href="login.php">
                             <strong>Log in</strong>
                         </a>
                         <?php 
@@ -81,7 +99,8 @@
     </nav>  
     
     <br>
-
+    <?php if(!isset($_SESSION["users_id"])) { 
+    ?>
     <section class="section form-border "> 
         <form action="includes/login.inc.php" method="post">
             <h1 class="title is-3 has-text-centered has-text-weight-semibold has-text-primary">LOG IN</h1>
@@ -114,7 +133,20 @@
             ?>
         </form>
     </section>
+
+    <?php 
+    } else {
+    ?>
+    <div class=" mt-6 has-text-centered">
+        <video loop autoplay controls muted>
+            <source src="../assets/login-video.mp4" type="video/mp4">
+        </video>
     
+    </div>
+    
+    <?php
+    }
+    ?>
 
     <br> <br>
     <footer class="footer-mine">

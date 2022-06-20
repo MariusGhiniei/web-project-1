@@ -9,17 +9,28 @@
     border: 4px solid darkorange;
     border-radius:25px;
     max-width:max-content;
-    margin: 70px auto;
+    margin: 60px auto 20px auto;
 }
+
 
 .align-right{
     margin-left:100px;
 }
-
 
 a{
     text-decoration: none;
     color:inherit;
 }
 
+.center{
+    position: absolute !important;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    
+}
+a{
+    text-decoration: none !important;
+}
 

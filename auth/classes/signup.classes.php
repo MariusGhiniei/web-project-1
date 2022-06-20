@@ -1,8 +1,6 @@
 <?php
-
     class Signup extends Db{
 
-        
         protected function setUser($username,$pass,$email){
 
             $stmt = $this->connect()->prepare(
@@ -14,7 +12,7 @@
             if(!$stmt->execute(array($username,$hashedPass,$email))) {
                 $stmt = null;
 
-                header("location: ../../index-home-page.php?error=stmtfailed");
+                header("location: ../signup.php?error=stmtfailed");
                 exit();
             }
 
@@ -31,7 +29,7 @@
 
                 $stmt = null;
 
-                header("location: ../../index-home-page.php?error=stmtfailed");
+                header("location: ../signup.php?error=stmtfailed");
                 exit();
             }
 

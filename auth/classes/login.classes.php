@@ -63,8 +63,13 @@
                 session_start();
 
                 //session variables
+                $_SESSION["loggedin"] = true;
                 $_SESSION["users_id"] = $user[0]["users_id"];
                 $_SESSION["users_username"] = $user[0]["users_username"];
+
+                //cookies
+
+                setcookie("loggedin", true, time() + (86400 * 30), "/");
 
             }
             

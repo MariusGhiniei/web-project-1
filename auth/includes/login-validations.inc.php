@@ -4,28 +4,60 @@
 
     if(strpos($url,"emptyinput") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        You did not fill in all fields !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-warning'>
+                        <p>Please fill in all the fields !</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
+
     if(strpos($url,"stmtfailed") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        Something went wrong, please try again !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-danger'>
+                        <p>Something went wrong, please try again !</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
+
     if(strpos($url,"usernotfound") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        Your is not found in the database !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                        <div class='notification center is-warning'>
+                            <p>User not found !</p>
+                            <button class='delete'></button>
+                        </div>
+                    </div>
+            </div>";
     }
     if(strpos($url,"wrongpassword") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        Password is incorrect !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                        <div class='notification center is-warning'>
+                            <p>Wrong password !</p>
+                            <button class='delete'></button>
+                        </div>
+                    </div>
+            </div>";
     }
     if(strpos($url,"none") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-success"> 
-        You have successfully logged in !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                        <div class='notification center is-success'>
+                            <p class='has-text-weight-semibold'>You have to be logged in to see this page !</p>
+                            <button class='delete'></button>
+                        </div>
+                </div>
+            </div>";
     }
     
 

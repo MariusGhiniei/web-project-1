@@ -4,33 +4,74 @@
 
     if(strpos($url,"emptyinput") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        You did not fill in all fields !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-warning'>
+                        <p>Please fill in all the fields !</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
     if(strpos($url,"username") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        Choose a valid username (letters only) !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-warning'>
+                        <p>Please enter a valid username!</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
     if(strpos($url,"email") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        Choose a valid email !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-warning'>
+                        <p>Please enter a valid email !</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
     if(strpos($url,"passwordmatch") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        Passwords do not match !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-warning'>
+                        <p>Passwords do not match !</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
     if(strpos($url,"usernameoremailtaken") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-danger"> 
-        Email or Username is already taken !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-warning'>
+                        <p>Username or email already taken !</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
     if(strpos($url,"none") == true)
     {
-        echo '<p class="pt-4 has-text-centered has-text-success"> 
-        You have been signed up !';
+        echo "<div class='has-text-centered'>
+                <div class='is-mobile is-centered'>
+                    <div class='notification center is-success-dark'>
+                        <p class='has-text-weight-semibold'>You have been signed up !</p> <br>
+                        <p class='has-text-weight-semibold'>You can now log in !</p>
+                        <br>
+                        <button class='button is-responsive is-success is-rounded has-text-weight-semibold'>
+                        <a class='has-text-white' href='login.php'> Log In  </a>
+                        </button> 
+                        <button class='delete'></button>
+                    </div>
+                </div>
+            </div>";
     }
 
 

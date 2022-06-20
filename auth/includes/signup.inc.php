@@ -16,7 +16,7 @@
 
         $signup->singupUser();
 
-        //front page
-        header("location: ../../index-home-page.php?error=none");
+        //login page
+        header("location: ../signup.php?error=none");
     }
 ?>

@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(isset($_POST["delete-submit"])) { 
-        
 
+    if(isset($_POST["post-text-submit"])) { 
+        
         $serverName = "localhost";
         $userName = "root";
         $password = "";
@@ -14,28 +14,25 @@
         {
             die("Connection failed: " . mysqli_connect_error());
         }
+
         $id = $_SESSION["users_id"];
 
-        $sql = "DELETE FROM users WHERE users_id = $id;";
-        
-        
-       
+        $sql = "INSERT INTO post_text (id, post_text) VALUES ($id, '" . $_POST["post-text"] . "');";
 
         if(mysqli_query($conn, $sql))
         {
-            session_unset();
-            session_destroy();
-    
-            header("location: ../index-home-page");
+            header("location: ../post.php?error=created");
             exit();
         }
         else
         {
-            header("location: profile.php?error=failed");
+            header("location: ../post.php?error=failed");
             echo "Error deleting record: " . mysqli_error($conn);
         }
 
         $conn->close();
 
     }
+
+
 ?>

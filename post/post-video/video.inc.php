@@ -1,8 +1,9 @@
 <?php
-    session_start();
-    if(isset($_POST["delete-submit"])) { 
-        
 
+    session_start();
+
+    if(isset($_POST["post-video-submit"])) { 
+        
         $serverName = "localhost";
         $userName = "root";
         $password = "";
@@ -14,28 +15,23 @@
         {
             die("Connection failed: " . mysqli_connect_error());
         }
+
         $id = $_SESSION["users_id"];
 
-        $sql = "DELETE FROM users WHERE users_id = $id;";
-        
-        
-       
+        $sql = "INSERT INTO post_video (id, post_text, post_link) VALUES ($id, '" . $_POST["post-text"] . "', '" . $_POST["post-link"] . "');";
 
         if(mysqli_query($conn, $sql))
         {
-            session_unset();
-            session_destroy();
-    
-            header("location: ../index-home-page");
+            header("location: ../post.php?error=created");
             exit();
         }
         else
         {
-            header("location: profile.php?error=failed");
+            header("location: ../post.php?error=failed");
             echo "Error deleting record: " . mysqli_error($conn);
         }
 
         $conn->close();
-
     }
+
 ?>

@@ -128,67 +128,75 @@
     </section>
 
     <div class="container section">
-        <form action=""></form>
-        <div id="Text" class="content-tab" >
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+        <form action="post-text/text.inc.php" method="post">
+            <div id="Text" class="content-tab" >
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post" name="post-text"></textarea>
+                    </div>
                 </div>
+                <br>
+                <button class=" button is-danger is-outlined has-text-centered is-centered" name="post-text-submit">Post</button>
             </div>
-            <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        </div>
+        </form>
         
-        <div id="Image" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+        <form action="post-image/image.inc.php" method="post" enctype="multipart/form-data">
+            <div id="Image" class="content-tab" style="display:none">
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post" name="post-text"></textarea>
+                    </div>
                 </div>
-            </div>
+                
+                <div id="file-js" class="file is-warning has-name" >
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="post-image" value="">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fa fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Upload an image 
+                            </span>
+                        </span>
+                        <span class="file-name">
+                        No image uploaded
+                        </span>
+                    </label>
+                </div>
+                <br>
+                <button class="is-centered button is-danger is-outlined has-text-centered" name="post-image-submit" type="submit">Post</button>
             
-            <div id="file-js" class="file is-warning has-name">
-                <label class="file-label">
-                    <input class="file-input" type="file" name="resume">
-                    <span class="file-cta">
-                        <span class="file-icon">
-                            <i class="fa fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                            Upload an image 
-                        </span>
-                    </span>
-                    <span class="file-name">
-                    No image uploaded
-                    </span>
-                </label>
-            </div>
-            <br>
-            <button class="is-centered button is-danger is-outlined has-text-centered">Post</button>
+            </div> 
+        </form>
         
-        </div>
-        <div id="Video" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+        <form action="post-video/video.inc.php" method="post">
+            <div id="Video" class="content-tab" style="display:none">
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post" name="post-text"></textarea>
+                    </div>
                 </div>
-            </div>
 
-            <input class="input is-warning" type="text" placeholder="Insert video link">
-            <br> <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        </div>
-        <div id="Check-in" class="content-tab" style="display:none">
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post"></textarea>
+                <input class="input is-warning" type="text" placeholder="Insert video link" name="post-link">
+                <br> <br>
+                <button class=" button is-danger is-outlined has-text-centered is-centered" name="post-video-submit">Post</button>
+            </div>
+        </form>
+
+        <form action="post-checkin/checkin.inc.php" method="post">
+            <div id="Check-in" class="content-tab" style="display:none">
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea is-medium has-fixed-size" rows = "7" placeholder="Type your post" name="post-text"></textarea>
+                    </div>
                 </div>
-            </div>
 
-            <input class="input is-warning" type="text" placeholder="Insert google maps location">
-            <br> <br>
-            <button class=" button is-danger is-outlined has-text-centered is-centered">Post</button>
-        
-        </div>
+                <input class="input is-warning" type="text" placeholder="Insert google maps location" name="post-checkin">
+                <br> <br>
+                <button class=" button is-danger is-outlined has-text-centered is-centered" name="post-checkin-submit">Post</button>
+            </div>
+        </form>
     </div>
 
     

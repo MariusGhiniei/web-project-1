@@ -128,6 +128,11 @@
 
             <button class=" button is-success is-rounded has-text-weight-semibold " value = "login"
             name = "login-submit" type="submit"> Log In</button>
+            <label class="checkbox mt-3 pl-3">
+                <input type="checkbox" name="remember-submit" id="remember-submit" 
+                    <?php if(isset($_COOKIE["remember"])) {?>  checked  <?php } ?>>
+                Remember me
+            </label>
             <?php
             include 'includes/login-validations.inc.php';
             ?>

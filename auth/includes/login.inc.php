@@ -17,5 +17,14 @@
 
         //login page
         header("location: ../login.php?error=none");
+
+        if(!empty($_POST["remember-submit"])){
+            setcookie("remember",$_POST["username"],time()+ (10 * 365 * 24 * 60 * 60));
+
+        } else {
+            if(isset($_COOKIE["remember"])){
+                setcookie("remember","");
+            }
+        }
     }
 ?>

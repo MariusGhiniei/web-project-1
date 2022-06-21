@@ -18,6 +18,7 @@
     <link rel= "stylesheet" href= "../style/header.css">
     <link rel ="stylesheet" href ="../style/footer.css">
     <link rel ="stylesheet" href ="../style/signup.css">
+    <link rel = "stylesheet" href = "../style/feed.css">
 
     <!-- Font Awesome Icons Import -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -99,6 +100,22 @@
             </div>
         </div>
     </nav>  
+    
+    <?php 
+        if(isset($_SESSION["users_id"]))
+        { 
+            echo '<div class="tile is-ancestor has-text-centered ml-1 mr-1 mt-6 pt-6 post-align">';
+                include "display/post-text.php";
+             include "display/post-image.php";
+            
+
+            
+                include "display/post-video.php";
+            
+                include "display/post-checkin.php";
+            echo '</div>';
+        }
+    ?>
 
     <footer class="footer-mine">
         <div class="content has-text-centered">
@@ -122,5 +139,8 @@
     
     </footer>
     <script src="../js/index.js"></script>
+    <script type="text/javascript" 
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=62b11641282de100195677a1&product=inline-share-buttons" 
+    async="async"></script>
   </body>
   </html>

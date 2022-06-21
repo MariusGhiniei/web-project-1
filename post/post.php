@@ -192,12 +192,15 @@
                     </div>
                 </div>
 
-                <input class="input is-warning" type="text" placeholder="Insert google maps location" name="post-checkin">
+                <input class="input is-warning" type="text" placeholder="Enter Latitude" name="post-lat"> 
+                <input class="input is-warning mt-2" type="text" placeholder="Enter Longitude" name="post-log">
                 <br> <br>
                 <button class=" button is-danger is-outlined has-text-centered is-centered" name="post-checkin-submit">Post</button>
             </div>
         </form>
     </div>
+
+    <?php include "notifications.php";?>
 
     
 

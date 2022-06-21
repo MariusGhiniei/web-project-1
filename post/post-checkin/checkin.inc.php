@@ -17,7 +17,8 @@
 
         $id = $_SESSION["users_id"];
 
-        $sql = "INSERT INTO post_checkin (id, post_text, post_chekin) VALUES ($id, '" . $_POST["post-text"] . "', '" . $_POST["post-checkin"] . "');";
+        $sql = "INSERT INTO post_checkin (id, post_text, post_lat,post_log) 
+        VALUES ($id, '" . $_POST["post-text"] . "', '" . $_POST["post-lat"] . "', '" . $_POST["post-log"] . "');";
 
         if(mysqli_query($conn, $sql))
         {

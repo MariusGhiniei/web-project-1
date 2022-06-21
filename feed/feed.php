@@ -106,10 +106,17 @@
         { 
             echo '<div class="tile is-ancestor has-text-centered ml-1 mr-1 mt-6 pt-6 post-align">';
                 include "display/post-text.php";
+            
+
+            // echo '<div class="tile is-ancestor has-text-centered ml-1 mr-1 mt-6 pt-6 post-align">';
+            //     include "display/post-image.php";
+            // echo '</div>';
+
+            
+                include "display/post-video.php";
+            
+                include "display/post-checkin.php";
             echo '</div>';
-            include "display/post-image.php";
-            include "display/post-video.php";
-            include "display/post-checkin.php";
         }
     ?>
 

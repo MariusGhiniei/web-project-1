@@ -26,7 +26,7 @@
             session_unset();
             session_destroy();
     
-            header("location: ../index-home-page");
+            header("location: ../index-home-page.php");
             exit();
         }
         else

@@ -25,13 +25,12 @@
 
             echo '<div class="tile is-parent is-3 is-vertical">'
                     . '<article class="tile is-child box has-background-white-ter">'
-                    . '<p class="title">' . $row["post_text"] . '</p>'
-                    . '<img src="data:image/jpeg;charset=utf8;base64,'.base64_encode($row['post_image']).'" height="200" width="200"/>'
-                    . '<p class="subtitle has-text-link is-italic">@' . $user["users_username"] . '</p>'
-                    . '<div class="sharethis-inline-share-buttons"></div>'
-            . '</article>'
-            
-        . '</div>';
+                        . '<p class="title">' . $row["post_text"] . '</p>'
+                        . '<img src="data:image/jpeg;charset=utf8;base64,'.base64_encode($row['post_image']).'" height="200" width="200"/>'
+                        . '<p class="subtitle has-text-link is-italic">@' . $user["users_username"] . '</p>'
+                        . '<div class="sharethis-inline-share-buttons"></div>'
+                    . '</article>'
+                . '</div>';
 
             
         }

@@ -28,6 +28,7 @@
         {
             header("location: ../post.php?error=text-failed");
             echo "Error deleting record: " . mysqli_error($conn);
+            exit();
         }
 
         $conn->close();

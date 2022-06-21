@@ -200,6 +200,8 @@
         </form>
     </div>
 
+    <?php include "notifications.php";?>
+
     
 
     

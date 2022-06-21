@@ -23,12 +23,12 @@
 
         if(mysqli_query($conn, $sql))
         {
-            header("location: ../post.php?error=created");
+            header("location: ../post.php?error=video-created");
             exit();
         }
         else
         {
-            header("location: ../post.php?error=failed");
+            header("location: ../post.php?error=video-failed");
             echo "Error deleting record: " . mysqli_error($conn);
         }
 

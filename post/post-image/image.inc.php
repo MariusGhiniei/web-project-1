@@ -19,24 +19,23 @@
 
         $id = $_SESSION["users_id"];
 
-        $fileName = $_FILES["post-image"]["name"];
-        $tempName = $_FILES["post-image"]["tmp_name"];
-        $folder = "./image/".$fileName;
+        $image = file_get_contents($_FILES["post-image"]["tmp_name"]);
 
-        move_uploaded_file($tempName, $folder);
+        $query = "INSERT INTO post_image (id, post_text, post_image) VALUES (?,?,?);";
 
-        $sql = "INSERT INTO post_image (id, post_text, post_image) VALUES ($id, '" . $_POST["post-text"] . "', '" . $fileName . "');";
+        if ($stmt = mysqli_prepare($conn, $query)){
 
-        if(mysqli_query($conn, $sql))
-        {
-            header("location: ../post.php?error=created");
-            exit();
+        $stmt->bind_param("sss", $id, $_POST["post-text"], $image);
+        $stmt->execute();
+
+        header("location: ../post.php?error=image-created");
         }
         else
         {
-            header("location: ../post.php?error=failed");
+            header("location: ../post.php?error=image-failed");
             echo "Error deleting record: " . mysqli_error($conn);
         }
+        $conn->close();
 
         
     }

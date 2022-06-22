@@ -22,11 +22,11 @@
                 header("location: ../signup.php?error=emptyinput");
                 exit();
             }
-            if($this->invalidUsername() == false){
+            // if($this->invalidUsername() == false){
 
-                header("location: ../signup.php?error=username");
-                exit();
-            }
+            //     header("location: ../signup.php?error=username");
+            //     exit();
+            // }
             if($this->invalidEmail() == false){
 
                 header("location: ../signup.php?error=email");
